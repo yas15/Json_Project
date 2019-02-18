@@ -1,0 +1,52 @@
+
+THE PROJECT
+
+We are building a decision support system to improve medication safety in paediatric emergencies. The system takes in patient’s details from the electronic patient records in the hospital and uses information in the medication formularies to guide the user into selecting safe and appropriate dosing parameters, which it then uses to perform the necessary dose calculations. Step-by-step instructions on how to prepare and administer the medication for that patient can be viewed on screen or can be printed onto bespoke syringe labels. 
+
+To start with, the product will focus on children (1 month >= age < 18 years) and on intravenous infusions only (e.g., mouth, intramuscular injections etc will be excluded)
+
+
+
+BACKGROUND
+
+The British National Formulary (BNF) have sent us V1.0 of their data dump. It’s a json file containing information on drugs, such as indications, side effects and dosing parameters. As the back-end developer, you now need to parse the data to (i) ensure they are correct and (ii) they fit our data schema, which has been designed to suit our App requirements. You will be working with clinicians and nurses - the end-users of our App - as well as our BNF colleagues. They will provide you with some specification tests but you will also be expected to use your analytical skills to come up with tests, spot possible issues in the data and ask them the right questions with the end goal of developing a robust pipeline to process the input data. Any mistakes will directly affect the patients and could severely affect their health. 
+
+
+
+THE EXERCISE
+
+There are two parts to the exercise.
+
+Part 1. 
+
+We receive information from the BNF on one drug “ertapenem” (file: input_BNF_ertapenem.json). Write code to re-map this information into our own schema and notation style - your output should match that in file: output_BNF_ertapenem.json .
+
+Requirements:
+- Please write the transformation code in C#. 
+- We expect at least one of the functions for the transformation to use a LINQ query.
+
+
+Part 2. 
+
+In the file: drugfile_forparsing.json, the BNF have provided us with information on a set of drugs. The main information for each drug, as before, is the indications for the drug, the route of administration, the patient age groups and their dose instructions. 
+
+Write code to read the file and perform tests on these fields. The purpose of these tests should be to (1) spot any errors in this or future data dumps (2) flag up possible issues that the domain experts can check before you can refine the test (3) filter out any information not relevant to our project, as described above. 
+
+Requirements:
+- You should aim to write C# code for at least 5 tests - aim to cover a range of specifications. Attention to detail to make sure these tests are error-tight is key.
+- You can choose to write a short paragraph or bullet points on remaining tests that you would think of implementing. 
+- Bonus points for any BDD tests!
+
+
+
+General Requirements:
+Please provide (a) code files (b) output files (c) any requirements for us to run your code.
+
+
+FILES WE PROVIDE:
+
+1. input_BNF_ertapenem.json - this file contains the source BNF data for one drug
+2. output_BNF_ertapenem.json - this file contains the output data in the schema of our App
+3. drugfile_forparsing.json - this file contains BNF information on a set of drugs.
+
+
